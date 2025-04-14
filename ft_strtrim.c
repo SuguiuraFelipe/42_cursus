@@ -6,41 +6,65 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:54:31 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/12 18:13:56 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:54:25 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int
+	ft_char_in_set(char c, char const *set)
 {
-	int	start;
-	int	end;
-	int	res_size;
-	int	leng;
+	size_t	i;
 
-	leng = ft_strlen(s1);
-	start = 0;
-	end = leng - 1;
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-	while (s1[start] && ft_strchr(set, s1[start]))
-		start++;
-	if (start >= leng)
-		return (ft_strdup(""));
-	else
+	i = 0;
+	while (set[i])
 	{
-		while (end >= 0 && ft_strchr(set, s1[end]))
-			end--;
+		if (set[i] == c)
+			return (1);
+		i++;
 	}
-	res_size = end - start + 1;
-	return (ft_substr(s1, start, res_size));
+	return (0);
 }
 
-int	main(void)
+int	ft_strlen(char const *str)
 {
-	char *s1 = "Flamengo obina";
-	char *set = "pega na minha";
-	printf("%s\n", ft_strtrim(s1, set));
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
+
+char
+	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	size_t	i;
+	size_t	start;
+	size_t	end;
+
+	start = 0;
+	while (s1[start] && ft_char_in_set(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_char_in_set(s1[end - 1], set))
+		end--;
+	str = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (start < end)
+		str[i++] = s1[start++];
+	str[i] = 0;
+	return (str);
+}
+
+/*int	main()
+{
+	char *s1 = " Flamengo  ";
+	char *set = " AFilgao ";
+	printf("%s\n", ft_strtrim(s1, set));
+}*/

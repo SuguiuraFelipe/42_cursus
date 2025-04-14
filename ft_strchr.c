@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:05:05 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/11 18:05:10 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:47:00 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *str;
-	int i;
+	char	*str;
+	int		i;
 
 	str = (char *)s;
 	i = 0;

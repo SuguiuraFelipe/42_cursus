@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:09:39 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/11 18:09:56 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:49:09 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strnstr(const char *str, const char *find, size_t len)
 {
-	size_t i;
-	size_t u;
+	size_t	i;
+	size_t	u;
 
 	i = 0;
 	if (!find[0])

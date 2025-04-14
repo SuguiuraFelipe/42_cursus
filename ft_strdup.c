@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:11:33 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/11 18:11:54 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:47:35 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char *s2;
-	int i;
-	int s1_len;
+	char	*s2;
+	int		i;
+	int		s1_len;
 
 	s1_len = ft_strlen(s1);
 	s2 = (char *)malloc((s1_len + 1) * sizeof(char));
