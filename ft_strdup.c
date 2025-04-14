@@ -6,11 +6,11 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:11:33 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 16:47:35 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:45:31 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strdup(const char *s1)

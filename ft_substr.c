@@ -6,24 +6,23 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 19:45:30 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/12 14:54:16 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/14 18:11:12 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		slen;
-	char	*subs;
+	unsigned int		i;
+	unsigned int		slen;
+	char				*subs;
 
 	i = 0;
 	slen = 0;
 	while (s[slen] != '\0')
 		slen++;
-	if ((start > slen) || (start < 0))
+	if (start > slen)
 		return (NULL);
 	if (start + len > slen)
 		len = slen - start;

@@ -3,113 +3,96 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsuguiur <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:41:51 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/10 19:58:20 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/14 18:56:08 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	count_words(const char *s, char c)
+static size_t	ft_countc(const char *s, char c)
 {
-	int	in_word = 0;
-	int	count = 0;
-	int	i = 0;
+	size_t	i;
+	size_t	counter;
+	size_t	o;
 
-	while (s[i] != '\0')
+	i = 0;
+	counter = 0;
+	while (s[i])
 	{
-		if (s[i] != c && in_word == 0)
-		{
-			in_word = 1;
-			count++;
-		}
-		else if (s[i] == c)
-			in_word = 0;
-		i++;
+		o = 0;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i++] != c)
+			o++;
+		if (o != 0)
+			counter++;
 	}
-	return (count);
+	return (counter);
 }
 
-char	*word_duplicate(const char *start, int len)
+static void	splitstr(char **str, char c, char const *s, size_t countc)
 {
-	char	*word;
-	int	i;
-	
+	size_t	i;
+	size_t	malloc_size;
+	size_t	j;
+
 	i = 0;
-	word = (char *) malloc(sizeof(char) * (len + 1)); 
-	if (word == NULL)
-		return (NULL);
-		
-	while (i < len) // start[i] != '\0'
+	j = 0;
+	while (j < countc)
 	{
-		word[i] = start[i];
-		i++;
+		malloc_size = 0;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i++] != c)
+			malloc_size++;
+		str[j] = (char *)malloc((malloc_size + 1) * sizeof(char));
+		if (str[j++] == NULL)
+		{
+			str = NULL;
+			break;
+		}
 	}
-	word[len] = '\0';
-	return (word);
+}
+
+static void	putchar_str(char const *s, char **str, char c, size_t countc)
+{
+	size_t	i;
+	size_t	j;
+	size_t	o;
+
+	i = 0;
+	j = 0;
+	while (j < countc)
+	{
+		o = 0;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] != c && s[i])
+			str[j][o++] = s[i++];
+		str[j][o] = '\0';
+		j++;
+	}
+	str[j] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	int	i;
-	int	words;
+	char **str;
+	size_t countc;
 
-	words = count_words(s, c);
-
-	result = (char **) malloc(sizeof(char *) * (words + 1));  
-	if (result == NULL)
+	if (!s)
 		return (NULL);
-
-	i = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			const char *start = s;
-			int	len = 0;
-			
-			while (*s != c && *s != '\0')  
-			{
-				len++;
-				s++;
-			}
-			result[i] = word_duplicate(start, len);
-			if (result[i] == NULL) 
-				return (NULL);
-			i++;
-		}
-		else
-			s++;
-	}
-	result[i] = NULL; 
-	return (result);
+	countc = ft_countc(s, c);
+	str = (char **)malloc((countc + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	splitstr(str, c, s, countc);
+	if (str == NULL)
+		return (NULL);
+	putchar_str(s, str, c, countc);
+	return (str);
 }
-
-int	main()
-{
-	char	**result;
-	char	s[] = "Eu amo estudar";
-	char	c = ' ';
-	int	i = 0;
-	
-	result = ft_split(s, c);
-	if (result == NULL)  
-	{
-		printf("Erro de alocação de memória\n");
-		return (1);
-	}
-
-	while (result[i] != NULL)  
-	{
-		printf("result[%d] = %s\n", i, result[i]);
-		free(result[i]);
-		i++;
-	}
-	free(result); 
-	return (0);
-}
-

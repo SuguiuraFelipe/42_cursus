@@ -6,22 +6,11 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:01:10 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 16:53:08 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/14 18:05:26 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
