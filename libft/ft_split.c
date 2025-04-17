@@ -6,12 +6,11 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:41:51 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 18:56:08 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:38:33 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	ft_countc(const char *s, char c)
 {
@@ -53,7 +52,7 @@ static void	splitstr(char **str, char c, char const *s, size_t countc)
 		if (str[j++] == NULL)
 		{
 			str = NULL;
-			break;
+			break ;
 		}
 	}
 }
@@ -81,8 +80,8 @@ static void	putchar_str(char const *s, char **str, char c, size_t countc)
 
 char	**ft_split(char const *s, char c)
 {
-	char **str;
-	size_t countc;
+	char	**str;
+	size_t	countc;
 
 	if (!s)
 		return (NULL);

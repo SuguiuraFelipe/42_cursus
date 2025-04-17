@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 17:38:13 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/15 17:58:11 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:28:57 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static long int	ft_len(int n, int *sign)
 	if (nb <= 0)
 	{
 		len = 1;
-		nb = nb * -1; 
+		nb = nb * -1;
 		*sign = -1;
 	}
 	while (nb != 0)
@@ -41,6 +41,14 @@ static long int	ft_len(int n, int *sign)
 		len++;
 	}
 	return (len);
+}
+
+char	f(unsigned int i, char c)
+{
+	i = 0;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
 
 char	*ft_itoa(int n)
@@ -69,9 +77,9 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%s\n", ft_itoa(-2147483648)); // Teste com INT_MIN
 	printf("%s\n", ft_itoa(42));          // Teste com número positivo
 	return (0);
-}
+}*/

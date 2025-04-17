@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 16:39:59 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 16:09:24 by fsuguiur         ###   ########.fr       */
+/*   Created: 2025/04/17 16:18:06 by fsuguiur          #+#    #+#             */
+/*   Updated: 2025/04/17 16:32:21 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char	*str;
-	size_t			i;
+	t_list	*new_node;
 
-	c = (unsigned char)c;
-	str = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		if (str[i] == c)
-		{
-			return (str + i);
-		}
-		i++;
-	}
-	return (0);
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }
 
-/*int main()
+int	main(void)
 {
-	const void *s = "";
-	int c = 'e';
-	size_t n = 2;
-	printf("O resultado: %s\n", ft_memchr(s, c, n));
-}*/
+	char	*str;
+	t_list	*node;
+
+	str = "Olá, mundo!";
+	node = ft_lstnew(str);
+	printf("Conteúdo: %s\n", (char *)node->content);
+	printf("Próximo: %p\n", node->next); // Deve imprimir (nil) ou 0
+	return (0);
+}

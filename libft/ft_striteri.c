@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 16:39:59 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 16:09:24 by fsuguiur         ###   ########.fr       */
+/*   Created: 2025/04/16 18:40:03 by fsuguiur          #+#    #+#             */
+/*   Updated: 2025/04/16 18:40:04 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	f(unsigned int i, char *c)
 {
-	unsigned char	*str;
-	size_t			i;
-
-	c = (unsigned char)c;
-	str = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		if (str[i] == c)
-		{
-			return (str + i);
-		}
-		i++;
-	}
-	return (0);
+	i = 32;
+	*c = *c - i;
 }
 
-/*int main()
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	const void *s = "";
-	int c = 'e';
-	size_t n = 2;
-	printf("O resultado: %s\n", ft_memchr(s, c, n));
+	int	i;
+
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
+
+/*int	main(void)
+{
+	char s[] = "flamengo";
+	ft_striteri(s, f);
+	printf("%s\n", s);
 }*/

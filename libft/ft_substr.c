@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 19:45:30 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 18:11:12 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:09:08 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	slen = 0;
+	if (s == NULL)
+		return (ft_strdup(""));
 	while (s[slen] != '\0')
 		slen++;
 	if (start > slen)
-		return (NULL);
+		return (ft_strdup(""));
 	if (start + len > slen)
 		len = slen - start;
 	subs = (char *)malloc((len + 1) * sizeof(char));

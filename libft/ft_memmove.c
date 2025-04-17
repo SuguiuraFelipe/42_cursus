@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:44:39 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 17:44:20 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:14:55 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (NULL);
 }
+
+/*int main()
+{
+	void *dst = "";
+	const void *src = "";
+	size_t len = 8;
+	printf("Resultado: %s\n", memmove(dst, src, len));
+}*/

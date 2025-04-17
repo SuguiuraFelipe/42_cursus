@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 16:39:59 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 16:09:24 by fsuguiur         ###   ########.fr       */
+/*   Created: 2025/04/16 18:12:23 by fsuguiur          #+#    #+#             */
+/*   Updated: 2025/04/16 18:49:46 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*str;
-	size_t			i;
+	long	nblong;
+	int		i;
+	char	c[10];
 
-	c = (unsigned char)c;
-	str = (unsigned char *)s;
+	nblong = n;
+	if (nblong == 0)
+		ft_putchar_fd('0', fd);
 	i = 0;
-	while (i < n)
+	if (nblong < 0)
 	{
-		if (str[i] == c)
-		{
-			return (str + i);
-		}
+		ft_putchar_fd('-', fd);
+		nblong = nblong * -1;
+	}
+	while (nblong > 0)
+	{
+		c[i] = nblong % 10 + 48;
+		nblong = nblong / 10;
 		i++;
 	}
-	return (0);
+	i--;
+	while (i >= 0)
+	{
+		ft_putchar_fd(c[i], fd);
+		i--;
+	}
 }
-
-/*int main()
-{
-	const void *s = "";
-	int c = 'e';
-	size_t n = 2;
-	printf("O resultado: %s\n", ft_memchr(s, c, n));
-}*/

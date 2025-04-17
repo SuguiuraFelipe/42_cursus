@@ -6,11 +6,11 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:43:23 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 17:38:06 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:01:25 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -20,8 +20,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	ptr1 = (unsigned char *)dst;
 	ptr2 = (unsigned char *)src;
-	if (*ptr1 == '\0' && *ptr2 == '\0')
-		return (0);
 	i = 0;
 	while (i < n)
 	{
@@ -30,3 +28,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+
+/*int main()
+{
+	void *dst = "";
+	const void *src = "";
+	size_t n = 10;
+	printf("Minha funcao: %s\n", ft_memcpy(dst, src, n));
+}*/
