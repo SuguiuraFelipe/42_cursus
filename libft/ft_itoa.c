@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 17:38:13 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 18:28:57 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/19 11:29:03 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static long int	ft_len(int n, int *sign)
 
 char	f(unsigned int i, char c)
 {
-	i = 0;
+	i = 32;
 	if (c >= 'a' && c <= 'z')
-		return (c - 32);
+		return (c - i);
 	return (c);
 }
 
