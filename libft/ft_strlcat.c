@@ -6,22 +6,11 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 17:03:16 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 17:34:09 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:23:25 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -48,3 +37,25 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	else
 		return (dst_len + src_len);
 }
+
+/*int main(void)
+{
+    char buffer[30] = "Hello, ";
+    const char *src = "world!";
+    size_t size = sizeof(buffer);
+
+    size_t result = ft_strlcat(buffer, src, size);
+    printf("Buffer após ft_strlcat: \"%s\"\n", buffer);
+    printf("Tamanho retornado: %zu\n", result);
+	
+    char buffer2[10] = "Hi ";
+    result = ft_strlcat(buffer2, "there!", sizeof(buffer2));
+    printf("\nBuffer 2: \"%s\"\n", buffer2);
+    printf("Tamanho retornado: %zu\n", result);
+
+    char buffer3[20] = "Teste";
+    result = ft_strlcat(buffer3, "Ignorado", 0);
+    printf("\nTeste com size = 0, resultado: %zu\n", result);
+
+    return 0;
+}*/

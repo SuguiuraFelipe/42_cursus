@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:41:51 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 18:38:33 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:06:59 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,3 +95,53 @@ char	**ft_split(char const *s, char c)
 	putchar_str(s, str, c, countc);
 	return (str);
 }
+
+/*int	main(void)
+{
+	char	**resultado;
+	int		i;
+
+	// Teste 1: string simples com separador comum
+	resultado = ft_split("ola,mundo,isso,e,um,teste", ',');
+	if (!resultado)
+	{
+		printf("Erro ao alocar memória!\n");
+		return (1);
+	}
+	i = 0;
+	while (resultado[i])
+	{
+		printf("Palavra %d: %s\n", i, resultado[i]);
+		free(resultado[i]);
+		i++;
+	}
+	free(resultado);
+
+	// Teste 2: string com separadores consecutivos
+	resultado = ft_split("um,,dois,,,tres", ',');
+	printf("\nTeste com separadores consecutivos:\n");
+	i = 0;
+	while (resultado[i])
+	{
+		printf("Segmento %d: %s\n", i, resultado[i]);
+		free(resultado[i]);
+		i++;
+	}
+	free(resultado);
+
+	// Teste 3: string só com separadores
+	resultado = ft_split(",,,", ',');
+	printf("\nTeste com apenas separadores:\n");
+	if (resultado[0] == NULL)
+		printf("Resultado está vazio como esperado.\n");
+	free(resultado);
+
+	// Teste 4: string vazia
+	resultado = ft_split("", ',');
+	printf("\nTeste com string vazia:\n");
+	if (resultado[0] == NULL)
+		printf("Resultado está vazio como esperado.\n");
+	free(resultado);
+
+	return (0);
+}*/

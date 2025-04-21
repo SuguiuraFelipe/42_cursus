@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 11:12:11 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 18:50:09 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:58:28 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	}
 }
 
-void	del(void *content)
+/* static void	del(void *content)
 {
 	free(content);
 }
 
-void	print_list(t_list *lst)
+static void	print_list(t_list *lst)
 {
 	while (lst)
 	{
@@ -38,7 +38,7 @@ void	print_list(t_list *lst)
 	printf("NULL\n");
 }
 
-/*int	main(void)
+int	main(void)
 {
 	t_list *node1 = ft_lstnew(strdup("Olá"));
 	t_list *node2 = ft_lstnew(strdup("mundo"));

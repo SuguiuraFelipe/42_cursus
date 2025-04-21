@@ -6,12 +6,11 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:09:39 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 16:49:09 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:18:14 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *find, size_t len)
 {
@@ -34,3 +33,16 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 	}
 	return (0);
 }
+
+/*int main(void)
+{
+    const char *str = "Olá, este é um exemplo de busca em uma string!";
+    const char *find = "exemplo";
+    const char *find2 = "mundo";
+
+    char *resultado = ft_strnstr(str, find, 30);
+    if (resultado)
+        printf("Encontrado: %s\n", resultado);
+    else
+        printf("Substring não encontrada.\n");
+}*/

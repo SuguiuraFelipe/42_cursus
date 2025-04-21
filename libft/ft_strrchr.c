@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:05:52 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 19:13:24 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:25:11 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,14 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
+
+/*int main(void)
+{
+    const char *str = "Olá, mundo! Bem-vindo ao universo de programação!";
+    
+    char *resultado = ft_strrchr(str, 'o');
+    if (resultado)
+        printf("Última ocorrência de 'o': %s\n", resultado);
+    else
+        printf("Caractere não encontrado.\n");
+}*/
