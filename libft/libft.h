@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 18:39:23 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 18:39:24 by fsuguiur         ###   ########.fr       */
+/*   Created: 2025/04/21 16:25:02 by fsuguiur          #+#    #+#             */
+/*   Updated: 2025/04/21 19:57:37 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <ctype.h>
 
 typedef struct s_list
 {

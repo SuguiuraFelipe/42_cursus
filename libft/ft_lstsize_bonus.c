@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 16:18:06 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/17 16:32:21 by fsuguiur         ###   ########.fr       */
+/*   Created: 2025/04/17 17:58:21 by fsuguiur          #+#    #+#             */
+/*   Updated: 2025/04/21 16:30:02 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*new_node;
+	int	count;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	count = 0;
+	while (lst != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }
 
-int	main(void)
+/*int main(void)
 {
-	char	*str;
-	t_list	*node;
+	t_list *lista = NULL;
 
-	str = "Olá, mundo!";
-	node = ft_lstnew(str);
-	printf("Conteúdo: %s\n", (char *)node->content);
-	printf("Próximo: %p\n", node->next); // Deve imprimir (nil) ou 0
+	t_list *n1 = ft_lstnew("Um");
+	t_list *n2 = ft_lstnew("Dois");
+	t_list *n3 = ft_lstnew("Três");
+
+	ft_lstadd_front(&lista, n3);
+	ft_lstadd_front(&lista, n2);
+	ft_lstadd_front(&lista, n1);
+
+	int tamanho = ft_lstsize(lista);
+	printf("Tamanho da lista: %d\n", tamanho);
+
 	return (0);
-}
+}*/

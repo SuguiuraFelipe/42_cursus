@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_llstiter.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 11:27:28 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/19 11:27:37 by fsuguiur         ###   ########.fr       */
+/*   Created: 2025/04/17 16:18:06 by fsuguiur          #+#    #+#             */
+/*   Updated: 2025/04/21 16:28:47 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void
-	ft_lstiter(t_list *lst, void (*f)(void*))
+t_list	*ft_lstnew(void *content)
 {
-	if (!f)
-		return ;
-	while (lst)
-	{
-		(*f)(lst->content);
-		lst = lst->next;
-	}
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }
+
+/*int	main(void)
+{
+	char	*str;
+	t_list	*node;
+
+	str = "Olá, mundo!";
+	node = ft_lstnew(str);
+	printf("Conteúdo: %s\n", (char *)node->content);
+	printf("Próximo: %p\n", node->next);
+	return (0);
+}*/

@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 19:45:30 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 18:09:08 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:11:12 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 
 /*int main() {
-    const char* str = "Hello, world!";
+    const char* str = NULL;
     int start = 7;
     int length = 5;
 

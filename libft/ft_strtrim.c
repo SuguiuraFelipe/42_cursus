@@ -6,15 +6,14 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:54:31 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/14 16:54:25 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/21 16:27:39 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-static int
-	ft_char_in_set(char c, char const *set)
+static int	ft_char_in_set(char c, char const *set)
 {
 	size_t	i;
 
@@ -38,8 +37,7 @@ int	ft_strlen(char const *str)
 	return (i);
 }
 
-char
-	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	size_t	i;
@@ -62,7 +60,7 @@ char
 	return (str);
 }
 
-/*int	main()
+/*int	main(void)
 {
 	char *s1 = " Flamengo  ";
 	char *set = " AFilgao ";
