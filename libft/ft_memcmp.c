@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:08:46 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 21:00:09 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:37:49 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
     printf("Teste 1 (iguais): %d\n", ft_memcmp(str1, str2, strlen(str1)));
     printf("Teste 2 (diferentes): %d\n", ft_memcmp(str1, str3, strlen(str1)));
     printf("Teste 3 (tamanho menor): %d\n", ft_memcmp(str1, str4, 5));
-    printf("Teste 4 (char diferente no meio): %d\n", ft_memcmp("abcde", "abXde", 5));
-    printf("Teste 5 (zero bytes): %d\n", ft_memcmp("abc", "xyz", 0));
+    printf("Teste 4 (zero bytes): %d\n", ft_memcmp("abc", "xyz", 0));
 
     return 0;
 }*/

@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 18:11:58 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 20:57:46 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:37:06 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
-	return ;
+		return ;
 	if (*lst)
-	ft_lstlast(*lst)->next = new;
+		ft_lstlast(*lst)->next = new;
 	else
-	*lst = new;
+		*lst = new;
 }
 
 /*static void	print_list(t_list *lst)

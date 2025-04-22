@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:10:32 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 18:44:04 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/22 18:07:40 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 }
 /*int	main(void)
 {
-	int	*arr;
-	int	n = 5;
-	int	i;
-
-	arr = (int *)ft_calloc(n, sizeof(int));
-	if (!arr)
-	{
-		printf("Falha ao alocar memória\n");
-		return (1);
-	}
-
-	printf("Memória alocada com ft_calloc:\n");
-	for (i = 0; i < n; i++)
-		printf("arr[%d] = %d\n", i, arr[i]);
-
+	int *arr = (int *)ft_calloc(5, sizeof(int));
+	for (int i = 0; i < 5; i++)
+		printf("%d\n", arr[i]);
 	free(arr);
-	return (0);
+	return 0;
 }*/
