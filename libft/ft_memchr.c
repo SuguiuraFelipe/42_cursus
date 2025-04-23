@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:39:59 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 16:09:24 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:55:23 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (str[i] == c)
 		{
-			return (str + i);
+			return (&str[i]);
 		}
 		i++;
 	}

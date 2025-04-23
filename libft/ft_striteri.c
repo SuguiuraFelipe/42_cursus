@@ -6,16 +6,16 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:40:03 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 21:28:41 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:14:13 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	f(unsigned int i, char *c)
+/*void	f(unsigned int i, char *c)
 {
 	*c = *c - i;
-}
+}*/
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

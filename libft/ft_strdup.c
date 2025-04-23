@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:11:33 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 21:26:16 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:22:51 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,6 @@ char	*ft_strdup(const char *s1)
         printf("Duplicada: %s\n", duplicada);
         free(duplicada);
     }
-    else
-    {
-        printf("Erro ao alocar memória.\n");
-    }
-
-    duplicada = ft_strdup("");
-    if (duplicada)
-    {
-        printf("\nString vazia duplicada: \"%s\"\n", duplicada);
-        free(duplicada);
-    }
+    
     return 0;
 }*/

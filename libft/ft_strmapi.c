@@ -6,18 +6,18 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:20:38 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 18:25:24 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:13:43 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	f(unsigned int i, char c)
+/*char	f(unsigned int i, char c)
 {
 	if (i % 2 == 0 && c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
-}
+}*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

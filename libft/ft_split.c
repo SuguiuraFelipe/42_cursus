@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:41:51 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 21:06:59 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:58:47 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static size_t	ft_countc(const char *s, char c)
 	return (counter);
 }
 
-static void	splitstr(char **str, char c, char const *s, size_t countc)
+static void	mensplitstr(char **str, char c, char const *s, size_t countc)
 {
 	size_t	i;
 	size_t	malloc_size;
@@ -49,12 +49,26 @@ static void	splitstr(char **str, char c, char const *s, size_t countc)
 		while (s[i] && s[i++] != c)
 			malloc_size++;
 		str[j] = (char *)malloc((malloc_size + 1) * sizeof(char));
-		if (str[j++] == NULL)
+		if (str[j] == NULL)
 		{
 			str = NULL;
 			break ;
 		}
+		j++;
 	}
+}
+
+void	free_split(char **str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }
 
 static void	putchar_str(char const *s, char **str, char c, size_t countc)
@@ -89,9 +103,12 @@ char	**ft_split(char const *s, char c)
 	str = (char **)malloc((countc + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
-	splitstr(str, c, s, countc);
+	mensplitstr(str, c, s, countc);
 	if (str == NULL)
+	{
+		free_split(str);
 		return (NULL);
+	}
 	putchar_str(s, str, c, countc);
 	return (str);
 }
@@ -101,46 +118,8 @@ char	**ft_split(char const *s, char c)
 	char	**resultado;
 	int		i;
 
-	// Teste 1: string simples com separador comum
-	resultado = ft_split("ola,mundo,isso,e,um,teste", ',');
-	if (!resultado)
-	{
-		printf("Erro ao alocar memória!\n");
-		return (1);
-	}
-	i = 0;
-	while (resultado[i])
-	{
-		printf("Palavra %d: %s\n", i, resultado[i]);
-		free(resultado[i]);
-		i++;
-	}
-	free(resultado);
-
-	// Teste 2: string com separadores consecutivos
-	resultado = ft_split("um,,dois,,,tres", ',');
-	printf("\nTeste com separadores consecutivos:\n");
-	i = 0;
-	while (resultado[i])
-	{
-		printf("Segmento %d: %s\n", i, resultado[i]);
-		free(resultado[i]);
-		i++;
-	}
-	free(resultado);
-
-	// Teste 3: string só com separadores
-	resultado = ft_split(",,,", ',');
-	printf("\nTeste com apenas separadores:\n");
-	if (resultado[0] == NULL)
-		printf("Resultado está vazio como esperado.\n");
-	free(resultado);
-
-	// Teste 4: string vazia
-	resultado = ft_split("", ',');
-	printf("\nTeste com string vazia:\n");
-	if (resultado[0] == NULL)
-		printf("Resultado está vazio como esperado.\n");
+	resultado = ft_split("ola,mundo", ',');
+	printf("Palavra %d: %s\n", i, resultado[i]);
 	free(resultado);
 
 	return (0);

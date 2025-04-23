@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 19:45:30 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 20:11:12 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:53:55 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
     char* result = ft_substr(str, start, length);
     
     if (result != NULL) {
-        printf("Substring: %s\n", result); // Saída: world
-        free(result); // Libera a memória alocada
+        printf("Substring: %s\n", result);
+        free(result);
     } else {
         printf("Erro ao extrair a substring.\n");
     }

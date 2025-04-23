@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:05:52 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 21:25:11 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:47:54 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strrchr(const char *s, int c)
 
 /*int main(void)
 {
-    const char *str = "Olá, mundo! Bem-vindo ao universo de programação!";
+    const char *str = "Olá, mundo!";
     
     char *resultado = ft_strrchr(str, 'o');
     if (resultado)

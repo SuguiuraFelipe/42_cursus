@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:44:39 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/16 16:14:55 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:29:48 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,27 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	str_src = (unsigned char *)src;
 	str_dst = (unsigned char *)dst;
-	if (*str_src != '\0' || *str_dst != '\0')
+	if (dst > src)
 	{
-		if (dst > src)
-		{
-			while (len-- > 0)
-				str_dst[len] = str_src[len];
-		}
-		else
-		{
-			i = 0;
-			while (i < len)
-			{
-				str_dst[i] = str_src[i];
-				i++;
-			}
-		}
-		return (dst);
+		while (len-- > 0)
+			str_dst[len] = str_src[len];
 	}
-	return (NULL);
+	else
+	{
+		i = 0;
+		while (i < len)
+		{
+			str_dst[i] = str_src[i];
+			i++;
+		}
+	}
+	return (dst);
 }
 
 /*int main()
 {
-	void *dst = "";
+	void *dst = NULL;
 	const void *src = "";
 	size_t len = 8;
-	printf("Resultado: %s\n", memmove(dst, src, len));
+	printf("Resultado: %s\n", ft_memmove(dst, src, len));
 }*/

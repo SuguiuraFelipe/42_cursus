@@ -6,7 +6,7 @@
 /*   By: fsuguiur <fsuguiur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:47:14 by fsuguiur          #+#    #+#             */
-/*   Updated: 2025/04/21 21:01:18 by fsuguiur         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:00:01 by fsuguiur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ void	*ft_memset(void *b, int c, size_t len)
 
     printf("ft_memset result: %s\n", buffer1);
     printf("memset result   : %s\n", buffer2);
-
-    // Outro teste: preencher com '\0'
-    char buf3[10] = "123456789";
-    ft_memset(buf3, '\0', 5);
-    printf("ft_memset com '\\0': [%s]\n", buf3); // Deve imprimir string vazia
 
     return 0;
 }*/
